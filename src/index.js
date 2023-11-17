@@ -1,14 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { pizzaData } from "./data";
+import "./index.css";
 
 function Header() {
-  return <h1>Pizza Hot!</h1>;
+  return (
+    <header className="header">
+      <h1>Pizza Hot!</h1>
+    </header>
+  );
 }
 
 function Pizza() {
   return (
-    <div>
+    <div className="pizza">
       <img src={pizzaData[0].photoName} alt={pizzaData[0].name} />
       <h3>{pizzaData[0].name}</h3>
     </div>
@@ -17,23 +22,25 @@ function Pizza() {
 
 function Menu() {
   return (
-    <div>
+    <main className="menu">
       <h2>Our Menu</h2>
       <Pizza />
       <Pizza />
-    </div>
+    </main>
   );
 }
 
 function Footer() {
   return (
-    <footer>{new Date().toLocaleTimeString()}. We are currently open!</footer>
+    <footer className="footer">
+      {new Date().toLocaleTimeString()}. We are currently open!
+    </footer>
   );
 }
 
 function App() {
   return (
-    <div>
+    <div className="container">
       <Header />
       <Menu />
       <Footer />
